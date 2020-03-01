@@ -4733,7 +4733,8 @@ public class S3AFileSystem extends FileSystem implements StreamCapabilities,
     return new S3AMultipartUploaderBuilder(this,
         getWriteOperationHelper(),
         createStoreContext(),
-        basePath);
+        basePath,
+        getInstrumentation().newMultipartUploaderStatistics());
   }
 
   /**
